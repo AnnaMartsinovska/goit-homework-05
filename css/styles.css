@@ -10,6 +10,9 @@
   --cornflower: #e7e9fc;
   --lightslate: #8e8f99;
   --green: #31d0aa;
+  --navy-blue-modal: #2e2f42;
+  --modal-background: #fcfcfc;
+  --transition-dur-fun: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -98,6 +101,7 @@ img {
   letter-spacing: 0.54px;
   color: var(--global-color-blue);
   text-transform: uppercase;
+  transition: color var(--transition-dur-fun);
 }
 
 .logo-header {
@@ -125,15 +129,25 @@ img {
   letter-spacing: 0.32px;
   color: var(--second-text-color);
   padding: 24px 0;
+  transition: color var(--transition-dur-fun);
 }
 
-/* .menu::after {
+.menu-active {
+  position: relative;
+  color: var(--active-button);
+}
+
+.menu-active::after {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
   content: '';
   display: block;
-  width: 48px;
+  width: 100%;
   height: 4px;
+  border-radius: 2px;
   background-color: var(--active-button);
-} */
+}
 
 .address {
   font-style: normal;
@@ -148,6 +162,7 @@ img {
   letter-spacing: 0.32px;
   color: var(--global-text-color);
   padding: 24px 0;
+  transition: color var(--transition-dur-fun);
 }
 
 /* ====== HEADER =======*/
@@ -189,6 +204,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  transition: color var(--transition-dur-fun);
 }
 
 .hero-button:hover,
@@ -321,15 +337,13 @@ img {
   border-radius: 50%;
   background-color: var(--global-color-blue);
   fill: var(--background-color-grey);
+  transition: color var(--transition-dur-fun);
 }
 
 .team-icon-link:hover,
 .team-icon-link:focus {
   background-color: var(--active-button);
 }
-
-/* .social-icon {
-} */
 
 .customers-link {
   width: 100%;
@@ -340,6 +354,7 @@ img {
   justify-content: center;
   align-items: center;
   color: var(--lightslate);
+  transition: color var(--transition-dur-fun);
 }
 
 .customers-item {
@@ -393,9 +408,6 @@ img {
   margin-right: 120px;
 }
 
-.footer-second-block {
-}
-
 .footer-social-text {
   font-family: var(--global-font);
   font-size: 16px;
@@ -424,6 +436,7 @@ img {
   height: 100%;
   background-color: var(--global-color-blue);
   border-radius: 50%;
+  transition: color var(--transition-dur-fun);
 }
 
 .footer-icon:hover,
@@ -456,6 +469,7 @@ img {
   border: 1px solid var(--cornflower);
   border-radius: 4px;
   min-width: 68px;
+  transition: color var(--transition-dur-fun);
 }
 
 .portfolio-btn:hover,
@@ -491,14 +505,86 @@ img {
   padding: 32px 16px;
 }
 
-.galery-link {
+.gallery-link {
   display: block;
+  transition: color var(--transition-dur-fun);
 }
 
-.galery-link:hover,
-.galery-link:focus {
+.gallery-link:hover,
+.gallery-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.overlay {
+  font-family: var(--global-font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  color: var(--background-color-grey);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  background-color: var(--global-color-blue);
+  transform: translateY(100%);
+  transition: transform var(--transition-dur-fun);
+}
+
+.gallery-link-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-link-overlay:hover .overlay {
+  transform: translateY(0%);
+}
+
 /* ====== PORTFOLIO =======*/
+
+/* ====== MODAL-WINDOW ======= */
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opasity var(--transition-dur-fun), visibility var(--transition-dur-fun);
+}
+
+.modal-window {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 408px;
+  height: 584px;
+  border-radius: 4px;
+  background-color: var(--modal-background);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+
+.modal-window-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 0px;
+}
+
+.modal-btn-icon {
+}
