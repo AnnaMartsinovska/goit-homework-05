@@ -677,6 +677,10 @@ img {
   fill: var(--global-color-blue);
 }
 
+.modal-text-input {
+  margin-bottom: 16px;
+}
+
 .modal-field-comment {
   height: 120px;
   padding-left: 16px;
