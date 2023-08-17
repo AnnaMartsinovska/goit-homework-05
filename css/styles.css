@@ -620,7 +620,7 @@ img {
   width: 360px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   text-align: center;
   color: var(--second-text-color);
   font-size: 16px;
@@ -629,31 +629,33 @@ img {
   letter-spacing: 0.32px;
 }
 
+.modal-field {
+  margin-bottom: 8px;
+}
+
 .modal-label {
   display: block;
   margin-bottom: 4px;
   color: var(--lightslate);
   font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.48px;
-  margin-top: 8px;
 }
 
-.modal-form {
-}
-.modal-field {
+.modal-field-input {
   position: relative;
 }
 
 .modal-input,
 .modal-field-comment {
-  position: relative;
   border-radius: 4px;
-  border: 1px solid var(--second-text-color);
-  padding: 10px 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   padding-left: 38px;
   height: 40px;
   width: 100%;
-  outline: 1px solid transparent;
+  outline: transparent;
+  background-color: transparent;
+  transition: border-color var(--transition-dur-fun);
 }
 
 .modal-input,
