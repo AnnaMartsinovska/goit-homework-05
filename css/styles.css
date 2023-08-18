@@ -221,7 +221,7 @@ img {
 
 /* ====== SECTION =======*/
 
-.hidden {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -675,6 +675,7 @@ img {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.48px;
+  margin-bottom: 8px;
 }
 
 .modal-field-input {
@@ -693,9 +694,12 @@ img {
   transition: border-color var(--transition-dur-fun);
 }
 
-.modal-field-input,
-.modal-field-comment:focus {
+.modal-input:focus {
   border-color: var(--global-color-blue);
+}
+
+.modal-input:focus + .modal-icon {
+  fill: var(--global-color-blue);
 }
 
 .modal-icon {
@@ -706,10 +710,6 @@ img {
   transform: translateY(-50%);
   pointer-events: none;
   transition: fill var(--transition-dur-fun);
-}
-
-.modal-icon:focus {
-  fill: var(--global-color-blue);
 }
 
 .modal-text-input {
@@ -730,6 +730,10 @@ img {
 
 .modal-field-comment::placeholder {
   color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-field-comment:focus {
+  border-color: var(--global-color-blue);
 }
 
 .modal-agremment {
@@ -759,6 +763,7 @@ img {
   transition: background-color var(--transition-dur-fun), border var(--transition-dur-fun),
     fill var(--transition-dur-fun);
   fill: transparent;
+  margin-right: 8px;
 }
 
 input[type='checkbox']:checked ~ .modal-agremment-desc .custom-checkbox {
