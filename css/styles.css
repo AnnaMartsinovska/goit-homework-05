@@ -199,7 +199,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  transition: color var(--transition-dur-fun);
+  transition: background-color var(--transition-dur-fun);
 }
 
 .hero-button:hover,
@@ -694,6 +694,7 @@ img {
 }
 
 .modal-agremment-desc {
+  display: block;
   color: var(--lightslate);
   font-size: 12px;
   letter-spacing: 0.48px;
