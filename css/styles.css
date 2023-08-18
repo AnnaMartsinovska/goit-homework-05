@@ -452,6 +452,9 @@ img {
   gap: 24px;
 }
 
+.subscribe-label {
+}
+
 .subscribe-form-input {
   width: 264px;
   height: 40px;
@@ -466,11 +469,16 @@ img {
   color: var(--background-color-white);
 }
 
+.subscribe-form-input::placeholder {
+  color: var(--background-color-white);
+}
+
 .footer-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
+  min-width: 165px;
 }
 
 .subscribe-icon {
@@ -685,7 +693,7 @@ img {
   transition: border-color var(--transition-dur-fun);
 }
 
-.modal-input,
+.modal-field-input,
 .modal-field-comment:focus {
   border-color: var(--global-color-blue);
 }
