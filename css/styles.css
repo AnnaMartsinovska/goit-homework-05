@@ -546,7 +546,6 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: scale(0.2);
 }
 
 .backdrop {
@@ -557,15 +556,14 @@ img {
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
   visibility: visible;
-  transition-property: visibility, opacity, transform;
-  transition: var(--transition-dur-fun);
+  transition: opacity var(--transition-dur-fun), visibility var(--transition-dur-fun);
 }
 
 .modal-window {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%) scale(1);
   width: 408px;
   min-height: 584px;
   border-radius: 4px;
@@ -573,6 +571,7 @@ img {
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14);
   padding: 72px 24px 24px;
+  transition: transform var(--transition-dur-fun);
 }
 
 .modal-window-close-btn {
@@ -583,36 +582,29 @@ img {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: border var(--transition-dur-fun), background-color var(--transition-dur-fun);
 }
 
-.modal-btn-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  fill: var(--cornflower);
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.1);
-}
-
-.modal-btn-icon:hover,
-.modal-btn-icon:focus {
-  fill: var(--active-button);
-  transition: color var(--transition-dur-fun);
+.modal-window-close-btn:hover,
+.modal-window-close-btn:focus {
+  border: none;
+  background-color: var(--active-button);
+  fill: var(--background-color-white);
 }
 
 .modal-btn-close-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  fill: var(--second-text-color);
+  transition: fill var(--transition-dur-fun);
 }
 
 .modal-btn-close-icon:hover,
 .modal-btn-close-icon:focus {
   fill: var(--background-color-white);
-  transition: color var(--transition-dur-fun);
 }
 
 .modal-caption {
@@ -686,9 +678,11 @@ img {
   padding-left: 16px;
   resize: none;
   margin-bottom: 16px;
-  color: var(--second-text-color);
   font-size: 12px;
   letter-spacing: 0.48px;
+  line-height: 1.17;
+  color: rgba(46, 47, 66, 0.4);
+  padding: 8px 16px;
 }
 
 .modal-field-comment::placeholder {
@@ -696,9 +690,6 @@ img {
 }
 
 .modal-agremment {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   margin-bottom: 24px;
 }
 
@@ -706,7 +697,9 @@ img {
   color: var(--lightslate);
   font-size: 12px;
   letter-spacing: 0.48px;
+  line-height: 1.17;
 }
+
 .modal-agremment-link {
   color: var(--global-color-blue);
 }

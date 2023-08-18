@@ -398,9 +398,6 @@
     <div class="backdrop is-hidden" data-modal>
       <div class="modal-window">
         <button type="button" class="modal-window-close-btn" data-modal-close>
-          <svg class="modal-btn-icon" width="24" height="24" aria-label="Ellipse">
-            <use href="./images/icons.svg#icon-ellipse"></use>
-          </svg>
           <svg class="modal-btn-close-icon" width="8" height="8" aria-label="x-close">
             <use href="./images/icons.svg#icon-x-close"></use>
           </svg>
@@ -422,15 +419,15 @@
                 <use href="./images/icons.svg#icon-user"></use>
               </svg>
             </div>
-            </div>
-            <div class="modal-field">
-            <label class="modal-label" for="user_phone">Phone</label>
+          </div>
+          <div class="modal-field">
+            <label class="modal-label" for="user-phone">Phone</label>
             <div class="modal-field-input">
               <input
                 class="modal-input"
                 type="text"
-                name="user_phone"
-                id="user_phone"
+                name="user-phone"
+                id="user-phone"
                 required
                 minlength="3"
               />
@@ -438,15 +435,15 @@
                 <use href="./images/icons.svg#icon-phone"></use>
               </svg>
             </div>
-            </div>
-            <div class="modal-field">
-            <label class="modal-label" for="user_email">Email </label>
+          </div>
+          <div class="modal-field">
+            <label class="modal-label" for="user-email">Email </label>
             <div class="modal-field-input">
               <input
                 class="modal-input"
                 type="text"
-                name="user_email"
-                id="user_email"
+                name="user-email"
+                id="user-email"
                 required
                 minlength="3"
               />
@@ -454,33 +451,41 @@
                 <use href="./images/icons.svg#icon-email"></use>
               </svg>
             </div>
-            </div>
-            <div class="modal-text-input">
-            <label class="modal-label" for="user_comment">Comment</label>
+          </div>
+          <div class="modal-text-input">
+            <label class="modal-label" for="user-comment">Comment</label>
             <textarea
               class="modal-field-comment"
-              name="user_comment"
-              id="user_comment"
+              name="user-comment"
+              id="user-comment"
               rows="6"
               placeholder="Text input"
-            ></textarea> 
-            <label class="modal-agremment">
-              <input class="hidden" type="checkbox" />
-              <span class="custom-checkbox">
-                <svg class="custom-checkbox-icon" width="10" height="8">
-                  <use href="./images/icons.svg#icon-checked"></use>
-                </svg>
-              </span>
-              <span class="modal-agremment-desc">
-                I accept the terms and conditions of the
-                <a class="modal-agremment-link" href="#" target="_blank" rel="noopener noreferrer"
-                  >Privacy Policy</a
-                >
-              </span>
-            </label>
-            </div>
-            <button class="hero-button" type="submit">Send</button>
+            ></textarea>
           </div>
+          <div class="modal-agremment">
+            <input
+              class="hidden"
+              type="checkbox"
+              name="user-privacy"
+              id="user-privacy"
+              value="true"
+            />
+            <label class="modal-agremment-desc" for="user-privacy">
+              I accept the terms and conditions of the</label
+            >
+            <span class="custom-checkbox">
+              <svg class="custom-checkbox-icon" width="10" height="8">
+                <use href="./images/icons.svg#icon-checked"></use>
+              </svg>
+            </span>
+            <span class="modal-agremment-desc">
+              I accept the terms and conditions of the
+              <a class="modal-agremment-link" href="#" target="_blank" rel="noopener noreferrer"
+                >Privacy Policy</a
+              >
+            </span>
+          </div>
+          <button class="hero-button" type="submit">Send</button>
         </form>
       </div>
     </div>
